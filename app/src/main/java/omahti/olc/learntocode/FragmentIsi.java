@@ -31,8 +31,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class FragmentIsi extends Fragment {
+
+    @BindView(R.id.judul_tv) TextView judulTv;
+    @BindView(R.id.oleh_tv) TextView olehTv;
 
     public FragmentIsi() {
         // Empty Constructor
@@ -41,13 +48,15 @@ public class FragmentIsi extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ButterKnife.bind(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_isi, container, false);
 
-        return inflater.inflate(R.layout.fragment_isi, container, false);
+        return root;
     }
 }
 

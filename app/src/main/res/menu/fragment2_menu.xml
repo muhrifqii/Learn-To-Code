@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ The MIT License (MIT)
   ~
@@ -22,10 +23,11 @@
   ~ SOFTWARE.
   -->
 
-<resources>
-    <string name="app_name">Learn To Code</string>
-    <string name="action_settings">Settings</string>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-</resources>
+    <item
+        android:id="@+id/action_coba"
+        android:title="coba"
+        app:showAsAction="ifRoom"/>
+</menu>

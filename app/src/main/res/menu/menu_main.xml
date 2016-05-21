@@ -36,5 +36,9 @@
         android:title="Search"
         android:icon="@android:drawable/ic_menu_search"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_change_fragment"
+        android:title="Ganti"
+        app:showAsAction="never"/>
 
 </menu>

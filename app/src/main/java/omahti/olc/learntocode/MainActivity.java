@@ -28,6 +28,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -44,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Fragment myFragment = new FragmentIsi();
+        FragmentTransaction ft =
+                getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, myFragment);
+        ft.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +93,25 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "search clicked!", Toast.LENGTH_SHORT).show();
                 return true;
             }
+            case R.id.action_change_fragment:{
+                Fragment fragment = new IsiKeDuaFragment();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, fragment);
+                ft.addToBackStack(null);
+                ft.commit();
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(getSupportFragmentManager().getBackStackEntryCount() > 0){
+            getSupportFragmentManager().popBackStack();
+        }
+        else{
+            super.onBackPressed();
+        }
     }
 }
