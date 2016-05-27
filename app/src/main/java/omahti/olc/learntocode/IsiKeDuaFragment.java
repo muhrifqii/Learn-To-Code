@@ -58,8 +58,6 @@ public class IsiKeDuaFragment extends Fragment {
 
         hostActivity = getActivity();
 
-        ((AppCompatActivity) hostActivity).getSupportActionBar().setHomeButtonEnabled(true);
-        ((AppCompatActivity) hostActivity).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return root;
     }
 
