@@ -30,6 +30,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -57,8 +58,8 @@ public class IsiKeDuaFragment extends Fragment {
 
         hostActivity = getActivity();
 
-        hostActivity.getActionBar().setHomeButtonEnabled(true);
-        hostActivity.getActionBar().setDisplayHomeAsUpEnabled(true);
+        ((AppCompatActivity) hostActivity).getSupportActionBar().setHomeButtonEnabled(true);
+        ((AppCompatActivity) hostActivity).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return root;
     }
 
@@ -93,4 +94,5 @@ public class IsiKeDuaFragment extends Fragment {
         }
 
     }
+
 }

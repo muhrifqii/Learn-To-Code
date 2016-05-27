@@ -101,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
                 ft.commit();
                 return true;
             }
+            case android.R.id.home:
+                onBackPressed();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
