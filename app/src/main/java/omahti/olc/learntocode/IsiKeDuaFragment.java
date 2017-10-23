@@ -74,13 +74,13 @@ public class IsiKeDuaFragment extends Fragment {
             case R.id.action_coba: {
                 AlertDialog alert =
                         new AlertDialog.Builder(hostActivity)
-                                .setMessage("Sukses bikin alert!")
+                                .setMessage("Created alert successfully!")
                                 .setTitle("My Alert")
-                                .setPositiveButton("Oke bosku", null)
-                                .setNegativeButton("Terserah!", new DialogInterface.OnClickListener() {
+                                .setPositiveButton("Oke", null)
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        Toast.makeText(hostActivity, "Sabar bosku", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(hostActivity, "Opps", Toast.LENGTH_LONG).show();
                                     }
                                 })
                                 .create();
